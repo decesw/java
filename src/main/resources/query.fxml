@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="QueryService" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="737.0" prefWidth="667.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+   <children>
+      <Label layoutX="26.0" layoutY="22.0" prefHeight="18.0" prefWidth="614.0" text="Query Service - GeodiQuery JAVA ">
+         <font>
+            <Font size="19.0" />
+         </font></Label>
+      <TextField fx:id="geodiUrl" layoutX="26.0" layoutY="68.0" prefHeight="26.0" prefWidth="614.0" promptText="geodiUrl" text="https://servis2.dece.com.tr" />
+      <Label fx:id="GeodiUrlText" layoutX="26.0" layoutY="50.0" prefHeight="18.0" prefWidth="364.0" text="Geodi Url:" />
+      <Label fx:id="TokenText" layoutX="26.0" layoutY="104.0" prefHeight="18.0" prefWidth="364.0" text="Token:" />
+      <TextField fx:id="token" layoutX="25.0" layoutY="122.0" prefHeight="26.0" prefWidth="614.0" promptText="token" text="EAAAAALLr4gqje1DFACLUfS1xYNrijmuogpvVIUFU%2BGqh71d3e35cS%2FSW41ruXwB%2FsctweoQzyFY8Mc148GwYYCfHG4OqUYp%2BRAbMabonEwl0soLeqXxshcVEJIbsUl7nqitFUha%2BCtJK1uqrxCUcQZFdUsPpT0FQfvReE4jH6EXxSU0k9QxXYxo88mt0f9tkP%2BhIEdmEkE4hVJGaNZCBTxW0qoVwtun%2Bkm3VsE3vk3y0S%2FYp2YGMG91B%2BiCPi%2F085xYTPmZNssnlMXkqQoaQp6oWG7fYP%2BckPQQeWFe7yvrpCnQL11j%2BTdtST16c%2FX7L3u%2BuuRb5lXcMcwMV6oOwBtfyB8%3D" />
+      <Label fx:id="WorkSpaceText" layoutX="26.0" layoutY="164.0" prefHeight="18.0" prefWidth="364.0" text="WorkSpace Name:" />
+      <TextField fx:id="wsName" layoutX="26.0" layoutY="182.0" prefHeight="26.0" prefWidth="614.0" promptText="wsName" text="3003-EN-Travel &amp; Food" />
+      <Label fx:id="QueryText" layoutX="26.0" layoutY="222.0" prefHeight="18.0" prefWidth="364.0" text="Query:" />
+      <TextField fx:id="query" layoutX="26.0" layoutY="240.0" prefHeight="26.0" prefWidth="614.0" promptText="query" text="*.jpg" />
+      <Separator layoutY="390.0" prefHeight="0.0" prefWidth="665.0" />
+      <Button fx:id="run" layoutX="588.0" layoutY="342.0" mnemonicParsing="false" onAction="#request" text="Run" />
+      <ChoiceBox id="HttpMethod" fx:id="selectMethod" layoutX="25.0" layoutY="355.0" prefWidth="150.0" />
+      <Label fx:id="startIndexText" layoutX="26.0" layoutY="282.0" prefHeight="18.0" prefWidth="78.0" text="Start Index:" />
+      <Label fx:id="endIndexText" layoutX="160.0" layoutY="282.0" prefHeight="18.0" prefWidth="78.0" text="End Index:" />
+      <TextField fx:id="startIndex" layoutX="26.0" layoutY="300.0" prefHeight="26.0" prefWidth="78.0" promptText="startIndex" text="0" />
+      <TextField fx:id="endIndex" layoutX="160.0" layoutY="300.0" prefHeight="26.0" prefWidth="78.0" promptText="endIndex" text="2" />
+      <Label fx:id="httpMethodText" layoutX="26.0" layoutY="333.0" prefHeight="18.0" prefWidth="94.0" text="http Method:" />
+      <TabPane layoutX="25.0" layoutY="402.0" prefHeight="328.0" prefWidth="614.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="getQuery" text="Query">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="125.0" prefWidth="572.0">
+                     <children>
+                        <TextArea fx:id="jsonQuery" prefHeight="299.0" prefWidth="614.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="getSummaries" text="Get Summaries">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="jsonSummary" prefHeight="299.0" prefWidth="614.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="getKeywords" text="Get Keywords">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="jsonKeywords" prefHeight="299.0" prefWidth="614.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="getFacet" text="Get Facet">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="jsonFacet" prefHeight="299.0" prefWidth="614.0" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
